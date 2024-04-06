@@ -1,0 +1,141 @@
+/* main.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}*/
+
+/* main.css */
+
+/* .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}  */
+
+/* Container CSS */
+/* .container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+ } */
+
+ .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+} 
+ 
+ /* Footer CSS */
+ footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+ }
+ 
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="file"] {
+  display: block;
+  margin-top: 5px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 25px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.card img {
+  width: 200px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Add this CSS to your existing stylesheet */
+.card-actions {
+  display: flex;
+  justify-content:flex-start;
+}
+
+.action-buttons {
+  margin-right: 10px; /* Adjust the spacing between buttons */
+}
+
+
+
+
+.icon {
+  width: 24px; /* Adjust size as needed */
+  height: 24px; /* Adjust size as needed */
+  fill: #000; /* Change color as needed */
+}
+
+.icon:hover {
+  fill: #0077B5; /* Change hover color as needed */
+}

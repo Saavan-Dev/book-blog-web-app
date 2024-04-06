@@ -1,0 +1,28 @@
+<%- include('partials/header.ejs') %>
+
+<main>
+  <% for( let item of books) { %>
+  <div class="container">
+    <div class="card">
+      <img src="<%= item.cover_image %>" alt="Book Cover" />
+      <!-- <img src="https://via.placeholder.com/150" alt="Placeholder Image"> -->
+      <div class="card-content">
+        <h2><%= item.book_title %></h2>
+        <p><%= item.book_description %></p>
+        <p>ISBN: <%= item.isbn_number %></p>
+      </div>
+      <div class="card-actions">
+        <form action="/edit-post/<%= item.id %>" method="GET">
+            <button type="submit" class="edit-button">Edit</button>
+        </form>
+        
+        <form action="/delete-post/<%= item.id %>" method="POST">
+          <button type="submit" class="delete-button">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</main>
+
+<%- include('partials/footer.ejs') %>

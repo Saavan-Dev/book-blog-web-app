@@ -1,0 +1,32 @@
+<%- include('partials/header.ejs') %>
+
+<main>
+    <div class="container">
+        <div class="card">
+            <h2>Add New Post</h2>
+            <form action="/submit-post" method="POST">
+                <div class="form-group">
+                    <label for="bookName">Name of Book:</label>
+                    <input type="text" id="bookName" name="bookName" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookTitle">Title of Book:</label>
+                    <input type="text" id="bookTitle" name="bookTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookDescription">Description of Book:</label>
+                    <textarea id="bookDescription" name="bookDescription" rows="5" required></textarea>
+                </div>
+                <!-- Changed input type to text and updated label -->
+                <div class="form-group">
+                    <label for="isbnNumber">ISBN Number:</label>
+                    <input type="text" id="isbnNumber" name="isbnNumber" required>
+                </div>
+                <button type="submit">Submit Post</button>
+                <button type="button" onclick="window.location.href='/'">Back</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer.ejs') %>
