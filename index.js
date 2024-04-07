@@ -63,49 +63,6 @@ async function getAllBookBlogRecords() {
     client.release();
   }
 }
-// async function getAllBookBlogRecords() {
-//   const client = await pool.connect();
-//   try {
-//      let bookBlogData = [];
-//      let bookBlogPromises = [];
-//      let bookBlogRecords = await client.query(
-//        "SELECT * FROM public.books ORDER BY id ASC"
-//      );
- 
-//      bookBlogRecords.rows.forEach((row) => {
-//        let promise = fetch(
-//          `https://covers.openlibrary.org/b/ISBN/${row.isbn_number}-M.jpg`
-//        )
-//          .then((response) => {
-//            if (!response.ok) {
-//              throw new Error("Book cover not found");
-//            }
-//            return response.url;
-//          })
-//          .catch((error) => {
-//            console.error("Error fetching book cover:", error.message);
-//            return "/images/NOT_AVAILABLE.png"; // Return "No Image Available" if cover image fetching fails
-//          });
-//        bookBlogPromises.push(promise);
-//      });
- 
-//      // Wait for all promises to resolve
-//      let coverImageUrls = await Promise.all(bookBlogPromises);
- 
-//      // Assign cover image URLs to corresponding rows
-//      bookBlogRecords.rows.forEach((row, index) => {
-//        row.cover_image = coverImageUrls[index];
-//        bookBlogData.push(row);
-//      });
- 
-//      return bookBlogData;
-//   } catch (error) {
-//      console.error("Error executing query:", error);
-//      throw error; // Propagate the error to the caller
-//   } finally {
-//      client.release();
-//   }
-//  }
 
 app.get("/", async (req, res) => {
   const data = await getAllBookBlogRecords();
@@ -150,7 +107,6 @@ app.get("/edit-post/:id", async (req, res) => {
       "SELECT * FROM public.books WHERE id=$1;",
       [id]
     );
-    console.log("bookBlogRecords.rows[0] : ", bookBlogRecords.rows[0]);
     res.render("editPost.ejs", {
       book: bookBlogRecords.rows[0], // Pass the first row of the result (assuming there's only one row)
     });
@@ -197,6 +153,9 @@ app.post("/delete-post/:id", async (req, res) => {
   }
 });
 
+app.get("/about", (req,res)=>{
+  res.render("about.ejs");
+})
 // const HTTP_SERVER_ERROR = 500;
 // app.use(function(err, req, res, next) {
 //  if (res.headersSent) {

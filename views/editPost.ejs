@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <label for="isbnNumber">ISBN Number:</label>
-                    <input type="text" id="isbnNumber" name="isbnNumber" value="<%= book.isbn_number %>" required>
+                    <input type="text" id="isbnNumber" name="isbnNumber" placeholder="For isbn number please refer this site: https://openlibrary.org" value="<%= book.isbn_number %>" required>
                 </div>
                 <button type="submit">Update Book</button>
                 <button type="button" onclick="window.location.href='/'">Back</button>
