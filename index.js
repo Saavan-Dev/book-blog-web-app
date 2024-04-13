@@ -31,7 +31,7 @@ async function getAllBookBlogRecords() {
 
     bookBlogRecords.rows.forEach((row) => {
       let promise = fetch(
-        `https://covers.openlibrary.org/b/ISBN/${row.isbn_number}-M.jpg`
+        `https://covers.openlibrary.org/b/ISBN/${row.isbn_number}-M.jpg?default=false`
       )
         .then((response) => {
           if (!response.ok) {
